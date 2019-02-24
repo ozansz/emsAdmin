@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { Icon } from 'native-base';
 
@@ -8,7 +8,6 @@ import SearchTab from './tabs/SearchTab'
 import RegisterTab from './tabs/RegisterTab'
 import SettingsTab from './tabs/SettingsTab'
 import ProfileTab from './tabs/ProfileTab'
-import { Platform } from 'expo-core';
 
 export default class MainScreen extends Component {
     static navigationOptions = {
@@ -52,7 +51,14 @@ const AppTabNavigator = createBottomTabNavigator({
     animationEnabled: true,
     swipeEnabled: true,
     tabBarOptions: {
-        activeTintColor: '#000',
+        style: {
+            ...Platform.select({
+                android: {
+                    backgroundColor: 'white',
+                }
+            })
+        },
+        activeTintColor: "#00629B",
         inactiveTintColor: '#d1cece',
         showLabel: true,
         showIcon: true
