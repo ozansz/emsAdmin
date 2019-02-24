@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import { Icon, Container, Content, Form, Item, Input, Label, Button, Picker } from 'native-base';
-
+import EntypoIcon from 'react-native-vector-icons/Entypo';
 import CustomHeader from '../CustomHeader'
 
 export default class RegisterTab extends Component {
@@ -30,7 +30,7 @@ export default class RegisterTab extends Component {
     return (
       <SafeAreaView forceInset={{top: 'always'}} style={{backgroundColor: '#212121', flex: 1}}>
         <Container style={styles.container}>
-          <CustomHeader style={{margin: 0}} title="Register" left_icon="ios-camera" right_icon="ios-send" />
+          <CustomHeader style={{margin: 0}} title="Register Participant" left_icon={<Icon name="ios-camera" />} right_icon={<EntypoIcon name="back-in-time" style={{fontSize: 24}} />} />
           <Content>
             <Form style={styles.form}>
               <Item fixedLabel>

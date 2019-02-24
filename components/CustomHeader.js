@@ -14,17 +14,20 @@ export default class CustomHeader extends Component {
         <View style={{height: 50}}>
             <Header style={styles.header}>
                 <Left style={{flex: 1}}>
-                    <Icon name={this.props.left_icon} style={styles.hdr_left} />
+                    <View style={styles.hdr_left}>
+                        {this.props.left_icon}
+                    </View>
                 </Left>
                 <Body style={{flex: 0, alignSelf: 'center'}}>
                     <Text style={styles.hdr_title}>{this.props.title}</Text>
                 </Body>
                 <Right style={{flex: 1}}>
-                    <Icon name={this.props.right_icon} style={styles.hdr_right} />
+                    <View style={styles.hdr_right}>
+                        {this.props.right_icon}
+                    </View>
                 </Right>
             </Header>
         </View>
-        
     );
   }
 }

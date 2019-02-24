@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Icon } from 'native-base';
+import { SafeAreaView } from 'react-navigation';
+import { Icon, Container } from 'native-base';
+import CustomSearchHeader from '../CustomSearchHeader';
 
 export default class SearchTab extends Component {
   static navigationOptions = {
@@ -18,9 +20,11 @@ export default class SearchTab extends Component {
 
   render() {
     return (
-      <View style={styles.container}> 
-        <Text> SearchTab </Text>
-      </View>
+      <SafeAreaView forceInset={{top: 'always'}} style={{backgroundColor: '#212121', flex: 1}}>
+        <Container style={styles.container}>
+          <CustomSearchHeader />
+        </Container>
+      </SafeAreaView>
     );
   }
 }
@@ -28,7 +32,5 @@ export default class SearchTab extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     }
 })
