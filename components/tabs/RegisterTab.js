@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import { Icon, Container, Content, Form, Item, Input, Label, Button, Picker } from 'native-base';
+
+import CustomHeader from '../CustomHeader'
 
 export default class RegisterTab extends Component {
   static navigationOptions = {
@@ -25,47 +28,49 @@ export default class RegisterTab extends Component {
 
   render() {
     return (
-      <Container style={styles.container}>
-        <Content>
-          <Text style={styles.header}>Register New Participant</Text>
-          <Form style={styles.form}>
-            <Item fixedLabel>
-              <Label>Name</Label>
-              <Input />
-            </Item>
-            <Item fixedLabel>
-              <Label>E-mail</Label>
-              <Input />
-            </Item>
-            <Item fixedLabel>
-              <Label>School</Label>
-              <Input />
-            </Item>
-            <Item fixedLabel>
-              <Label>Department</Label>
-              <Input />
-            </Item>
-            <Item fixedLabel>
-              <Label>Grade</Label>
-              <Picker
-                placeholder="Grade"
-                selectedValue={this.state.grade}
-                onValueChange={this.onGradeValueChange.bind(this)}
-              >
-                <Picker.Item label="Prep School" value="prep" />
-                <Picker.Item label="1st Grade" value="1" />
-                <Picker.Item label="2nd Grade" value="2" />
-                <Picker.Item label="3rd Grade" value="3" />
-                <Picker.Item label="4th Grade" value="4" />
-                <Picker.Item label="Graduate" value="grad" />
-              </Picker>
-            </Item>
-            <Button style={styles.formButton} block>
-              <Text style={{color: 'white'}}>Register</Text>
-            </Button>
-          </Form>
-        </Content>
-      </Container>
+      <SafeAreaView forceInset={{top: 'always'}} style={{backgroundColor: '#212121', flex: 1}}>
+        <Container style={styles.container}>
+          <CustomHeader style={{margin: 0}} title="Register" left_icon="ios-camera" right_icon="ios-send" />
+          <Content>
+            <Form style={styles.form}>
+              <Item fixedLabel>
+                <Label>Name</Label>
+                <Input />
+              </Item>
+              <Item fixedLabel>
+                <Label>E-mail</Label>
+                <Input />
+              </Item>
+              <Item fixedLabel>
+                <Label>School</Label>
+                <Input />
+              </Item>
+              <Item fixedLabel>
+                <Label>Department</Label>
+                <Input />
+              </Item>
+              <Item fixedLabel>
+                <Label>Grade</Label>
+                <Picker
+                  placeholder="Grade"
+                  selectedValue={this.state.grade}
+                  onValueChange={this.onGradeValueChange.bind(this)}
+                >
+                  <Picker.Item label="Prep School" value="prep" />
+                  <Picker.Item label="1st Grade" value="1" />
+                  <Picker.Item label="2nd Grade" value="2" />
+                  <Picker.Item label="3rd Grade" value="3" />
+                  <Picker.Item label="4th Grade" value="4" />
+                  <Picker.Item label="Graduate" value="grad" />
+                </Picker>
+              </Item>
+              <Button style={styles.formButton} block>
+                <Text style={{color: 'white'}}>Register</Text>
+              </Button>
+            </Form>
+          </Content>
+        </Container>
+      </SafeAreaView>
     );
   }
 }
@@ -75,15 +80,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
     },
-    header: {
-      fontSize: 24,
-      textAlign: 'center',
-      marginTop: 20,
-      marginBottom: 30,
-    },
     form: {
-      margin: 10,
-      marginTop: 0
+      marginLeft: 10,
+      marginRight: 10,
+      marginTop: 30
     },
     formButton: {
       backgroundColor: "#FFA300",

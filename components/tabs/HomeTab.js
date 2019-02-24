@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { Icon } from 'native-base';
+import { StyleSheet, View, Text, StatusBar } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
+import { Icon, Header, Left, Right, Container, Content, Body } from 'native-base';
+
+import CustomHeader from '../CustomHeader'
 
 export default class HomeTab extends Component {
   static navigationOptions = {
@@ -18,9 +21,11 @@ export default class HomeTab extends Component {
 
   render() {
     return (
-      <View style={styles.container}> 
-        <Text> HomeTab </Text>
-      </View>
+      <SafeAreaView forceInset={{top: 'always'}} style={{backgroundColor: '#212121', flex: 1}}>
+        <Container style={styles.container}> 
+          <CustomHeader title="EMS Admin" left_icon="ios-camera" right_icon="ios-send" />
+        </Container>
+      </SafeAreaView>
     );
   }
 }
@@ -28,7 +33,6 @@ export default class HomeTab extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: 'white',
     }
 })

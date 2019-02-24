@@ -10,14 +10,18 @@ import SettingsTab from './tabs/SettingsTab'
 import ProfileTab from './tabs/ProfileTab'
 
 export default class MainScreen extends Component {
+    //static navigationOptions = {
+    //    headerLeft: <Icon name='ios-camera' style={{paddingLeft: 20}} />,
+    //    title: 'Event Management System',
+    //    headerRight: <Icon name='ios-send' style={{paddingRight: 20, color: "#00629B"}} />,
+    //    headerTitleStyle: {
+    //        fontSize: 16,
+    //        textAlign: 'center'
+    //    }
+    //}
+    
     static navigationOptions = {
-        headerLeft: <Icon name='ios-camera' style={{paddingLeft: 20}} />,
-        title: 'Event Management System',
-        headerRight: <Icon name='ios-send' style={{paddingRight: 20}} />,
-        headerTitleStyle: {
-            fontSize: 16,
-            textAlign: 'center'
-        }
+        header: null
     }
 
     constructor(props) {
