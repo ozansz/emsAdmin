@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Header, Item, Icon, Input, Button } from 'native-base';
+import { ieee_blue } from '../ui-config';
 
 export default class CustomSearchHeader extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export default class CustomSearchHeader extends Component {
             <Item>
                 <Icon name="ios-search" />
                 <Input placeholder="Search participant" />
-                <Icon name="ios-people" />
+                <Icon name="ios-people" style={{color: ieee_blue}} />
             </Item>
             <Button>
                 <Text>Search</Text>

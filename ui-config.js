@@ -4,5 +4,6 @@ module.exports = {
     ieee_yellow: '#FFD100',
     ieee_green: '#78BE20',
     ieee_red: '#BA0C2F',
-    ieee_purple: '#981D97'
+    ieee_purple: '#981D97',
+    uiShowTabLabels: false
 }

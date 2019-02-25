@@ -3,6 +3,8 @@ import { Platform, StyleSheet } from 'react-native';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import { Icon } from 'native-base';
 
+import { uiShowTabLabels } from '../ui-config';
+
 import HomeTab from './tabs/HomeTab'
 import SearchTab from './tabs/SearchTab'
 import RegisterTab from './tabs/RegisterTab'
@@ -64,7 +66,7 @@ const AppTabNavigator = createBottomTabNavigator({
         },
         activeTintColor: "#00629B",
         inactiveTintColor: '#d1cece',
-        showLabel: true,
+        showLabel: uiShowTabLabels,
         showIcon: true
     }
 })

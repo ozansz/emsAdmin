@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Icon } from 'native-base';
+import { SafeAreaView } from 'react-navigation';
+import { Icon, Container } from 'native-base';
+import CustomHeader from '../CustomHeader';
+import { ieee_blue } from '../../ui-config';
 
 export default class SettingsTab extends Component {
   static navigationOptions = {
@@ -18,9 +21,11 @@ export default class SettingsTab extends Component {
 
   render() {
     return (
-      <View style={styles.container}> 
-        <Text> SettingsTab </Text>
-      </View>
+      <SafeAreaView forceInset={{top: 'always'}} style={{backgroundColor: '#212121', flex: 1}}>
+        <Container style={styles.container}>
+          <CustomHeader title="Settings" left_icon={<Icon name="ios-camera" />} right_icon={<Icon name="ios-bug" style={{color: ieee_blue}} />} />
+        </Container>
+      </SafeAreaView>
     );
   }
 }
@@ -28,7 +33,6 @@ export default class SettingsTab extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: 'white'
     }
 })
